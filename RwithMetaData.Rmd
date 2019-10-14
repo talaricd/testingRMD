@@ -22,7 +22,7 @@ CMD + OPT + i to insert r chunk
 highlight string then type quotes to add quotes at start and end
 cmd shit K knitr shortcut
 toc created via our hashtag headings listed (toc depth = num of #)
-```{r}
+```{r message=FALSE}
 library(tidyverse)
 gm <- read_csv("Data/gapminder.csv")
 ```

@@ -389,25 +389,8 @@ summary {
 <h1>Let’s embed some r code</h1>
 <p>We’ll write an R chunk that loads tidyverse package then reads in the Gapminder data set from the data subdirectory of the project</p>
 <p>CMD + OPT + i to insert r chunk highlight string then type quotes to add quotes at start and end cmd shit K knitr shortcut toc created via our hashtag headings listed (toc depth = num of #)</p>
-<pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## ── Attaching packages ────────────────────── tidyverse 1.2.1 ──</code></pre>
-<pre><code>## ✔ ggplot2 3.2.1     ✔ purrr   0.3.2
-## ✔ tibble  2.1.3     ✔ dplyr   0.8.3
-## ✔ tidyr   1.0.0     ✔ stringr 1.4.0
-## ✔ readr   1.3.1     ✔ forcats 0.4.0</code></pre>
-<pre><code>## ── Conflicts ───────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()</code></pre>
-<pre class="r"><code>gm &lt;- read_csv(&quot;Data/gapminder.csv&quot;)</code></pre>
-<pre><code>## Parsed with column specification:
-## cols(
-##   country = col_character(),
-##   continent = col_character(),
-##   year = col_double(),
-##   lifeExp = col_double(),
-##   pop = col_double(),
-##   gdpPercap = col_double()
-## )</code></pre>
+<pre class="r"><code>library(tidyverse)
+gm &lt;- read_csv(&quot;Data/gapminder.csv&quot;)</code></pre>
 </div>
 <div id="investigate-gm-data" class="section level1">
 <h1>Investigate gm data</h1>
