@@ -1,0 +1,87 @@
+---
+title: "Gapminder Analysis"
+author: "Dave Talarico"
+date: "10/14/2019"
+output: 
+  html_document:
+    keep_md: yes
+    fig_caption: yes
+    toc: yes
+---
+
+
+# Introduction
+
+Here is my first rmd document
+
+# Let's embed some r code
+
+We'll write an R chunk that loads tidyverse package then reads in the Gapminder data set from the data subdirectory of the project
+
+CMD + OPT + i to insert r chunk
+highlight string then type quotes to add quotes at start and end
+cmd shit K knitr shortcut
+toc created via our hashtag headings listed (toc depth = num of #)
+```{r}
+library(tidyverse)
+gm <- read_csv("Data/gapminder.csv")
+```
+
+# Investigate gm data
+
+Let's take a look
+```{r}
+head(gm)
+```
+
+# Our First Plot
+showing gdp per capita on X & life expectancy on Y
+```{r fig.cap = "Life Expectancy V. GDP"}
+gm %>% 
+  ggplot(aes(x = gdpPercap, y = lifeExp)) +
+  geom_point()
+```
+
+# A Better Plot
+
+```{r fig.cap = "Life Expectancy V. GDP", fig.width= 10, fig.height=10}
+gm %>% 
+  ggplot(aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(aes(color = continent)) +
+  scale_x_log10()
+```
+
+# Possible chunk options
+
+Options include:
+- echo (defaults TRUE) whether to include code in output
+- results 
+  - hide will hide results
+  - hold holds all results until end of r chunk
+- include(defaults TRUE) if FALSE code wont be run
+- fig.width, fig.height set dimensions in output
+- cache (deafults FALSE) if TRUE saves result from R chunk
+
+# Table in rMarkdown
+
+See some data using head
+```{r}
+head(gm)
+```
+
+now head function into a nicely formatted table
+```{r}
+library(knitr)
+kable(head(gm))
+```
+
+If you like tables, look into **gt** table package
+
+kniting as pdf
+
+NOT WORKING
+```{r}
+#library(tinytex)
+
+```
+
